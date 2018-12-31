@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
+void navigateToBooks(BuildContext context) {
+  Navigator.of(context).pushNamed('/newbook');
+}
 class Home extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -67,11 +71,12 @@ class Home extends StatelessWidget {
           ),
           Container(
               child: MaterialButton(
-            elevation: 5,
-            child: Text("Reserva ahora!"),
-            color: Colors.deepOrange[200],
-            onPressed: () => {},
-          )),
+                  elevation: 5,
+                  child: Text("Reserva ahora!"),
+                  color: Colors.deepOrange[200],
+                  onPressed: () {
+                    navigateToBooks(context);
+                  })),
         ])
       ],
     );

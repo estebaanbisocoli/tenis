@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Home.dart';
+import 'package:tennis_esquel/screens/Home/Home.dart';
+import 'screens/Books/Books.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,6 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      home: Home(),
+      routes: <String, WidgetBuilder> {
+        '/home': (BuildContext context) => Home(),
+        '/newbook': (BuildContext context) => Books()
+      },
+
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,7 +27,6 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Italiana Tennis'),
     );
   }
 }
@@ -67,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
 
-      body:Home()// This trailing comma makes auto-formatting nicer for build methods.
+      body:Books()// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
